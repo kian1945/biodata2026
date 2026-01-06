@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Portofolio Kiandra Rafa Adiyar – Pelajar SMA GUNUNG MADU." />
   <title>Kiandra Rafa Adiyar – Portofolio</title>
+
+  <!-- Font & Icon -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <style>
     * {
       box-sizing: border-box;
@@ -26,36 +29,37 @@
       text-decoration: none;
     }
 
+    /* NAVBAR */
     nav {
-      background: rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      background: rgba(0,0,0,0.15);
+      padding: 18px;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      backdrop-filter: blur(10px);
     }
 
     nav a {
-      margin: 0 20px;
+      margin: 0 18px;
       font-weight: 600;
-      color: #fff;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #e0e0e0;
+      color: #e0f7fa;
     }
 
+    /* HEADER */
     header {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      align-items: center;
       text-align: center;
       padding: 40px 20px;
-      animation: fadeSlideDown 1s ease forwards;
-      opacity: 0;
+      animation: fadeDown 1s ease forwards;
     }
 
     .avatar {
@@ -63,14 +67,13 @@
       height: 160px;
       border-radius: 50%;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
       margin-bottom: 20px;
-      transform: scale(0.9);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
 
     .avatar:hover {
-      transform: scale(1);
+      transform: scale(1.05);
     }
 
     .avatar img {
@@ -84,20 +87,21 @@
       font-weight: 700;
     }
 
-    p.subtitle {
+    .subtitle {
       font-size: 1.2rem;
-      margin-top: 10px;
       opacity: 0.9;
+      margin-top: 8px;
     }
 
+    /* BUTTON */
     .btn {
       display: inline-block;
+      margin-top: 20px;
       background: #1dc4e9;
-      color: white;
-      padding: 12px 28px;
+      padding: 12px 30px;
       border-radius: 30px;
-      transition: background 0.3s ease, transform 0.3s ease;
       font-weight: 600;
+      transition: 0.3s;
     }
 
     .btn:hover {
@@ -105,204 +109,205 @@
       transform: translateY(-2px);
     }
 
-    .btn.drive-anim {
-      animation: pulseRotate 2s infinite;
+    .drive-anim {
+      animation: pulse 2s infinite;
     }
 
+    /* MAIN */
     main {
       background: #fff;
+      color: #333;
       border-top-left-radius: 40px;
       border-top-right-radius: 40px;
       padding: 60px 20px;
-      color: #333;
     }
 
     section {
       max-width: 900px;
       margin: 0 auto 60px auto;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeSlideUp 1s ease forwards;
+      animation: fadeUp 1s ease forwards;
     }
 
-    section:nth-of-type(1) { animation-delay: 0.2s; }
-    section:nth-of-type(2) { animation-delay: 0.4s; }
-    section:nth-of-type(3) { animation-delay: 0.6s; }
-    section:nth-of-type(4) { animation-delay: 0.8s; }
-
     h2 {
-      font-size: 1.8rem;
       color: #1dc4e9;
+      font-size: 1.8rem;
       margin-bottom: 20px;
     }
 
-    ul {
-      padding-left: 20px;
-      list-style: disc;
+    /* TABLE STYLE */
+    .table-wrapper {
+      overflow-x: auto;
     }
 
-    .card-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.9);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
 
-    .card {
-      background: #f9f9f9;
-      border-left: 5px solid #1dc4e9;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    th, td {
+      padding: 16px 18px;
+      text-align: left;
     }
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    th {
+      background: linear-gradient(135deg, #1dc4e9, #1de9b6);
+      color: #fff;
+      width: 35%;
     }
 
-    .contact-info p {
-      margin-bottom: 10px;
+    tr:nth-child(even) td {
+      background: #f2fbfd;
     }
 
-    .social-icons {
-      margin-top: 15px;
+    tr:hover td {
+      background: #e0f7fa;
+      transition: 0.3s;
     }
 
-    .social-icons a {
-      margin-right: 15px;
-      font-size: 1.5rem;
-      color: #1dc4e9;
-      transition: color 0.3s ease;
+    /* PRESTASI BADGE */
+    .prestasi-table th, .prestasi-table td {
+      text-align: center;
     }
 
-    .social-icons a:hover {
-      color: #159bbd;
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
     }
 
+    .gold { background: #ffb300; }
+    .green { background: #1de9b6; }
+    .blue { background: #1dc4e9; }
+
+    /* FOOTER */
     footer {
+      background: #1dc4e9;
       text-align: center;
       padding: 20px;
-      background: #1dc4e9;
-      color: white;
+      color: #fff;
     }
 
-    @keyframes fadeSlideDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to   { opacity: 1; transform: translateY(0); }
+    /* ANIMATION */
+    @keyframes fadeDown {
+      from {opacity:0; transform: translateY(-30px);}
+      to {opacity:1; transform: translateY(0);}
     }
 
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
+    @keyframes fadeUp {
+      from {opacity:0; transform: translateY(30px);}
+      to {opacity:1; transform: translateY(0);}
     }
 
-    @keyframes pulseRotate {
-      0% {
-        transform: scale(1) rotate(0deg);
-        box-shadow: 0 0 0 0 rgba(29,196,233, 0.7);
-      }
-      50% {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 0 20px 10px rgba(29,196,233, 0.3);
-      }
-      100% {
-        transform: scale(1) rotate(-3deg);
-        box-shadow: 0 0 0 0 rgba(29,196,233, 0);
-      }
+    @keyframes pulse {
+      0% {box-shadow: 0 0 0 0 rgba(29,196,233,0.7);}
+      70% {box-shadow: 0 0 0 20px rgba(29,196,233,0);}
+      100% {box-shadow: 0 0 0 0 rgba(29,196,233,0);}
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.5rem; }
+    @media(max-width:600px){
+      h1 {font-size:2rem;}
+      h2 {font-size:1.5rem;}
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navigasi -->
-  <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#biodata">Biodata</a>
-    <a href="#prestasi">Prestasi Dan Pencapaian</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+<nav>
+  <a href="#tentang">Tentang</a>
+  <a href="#biodata">Biodata</a>
+  <a href="#prestasi">Prestasi</a>
+  <a href="#kontak">Kontak</a>
+</nav>
 
-  <!-- Header -->
-  <header>
-    <div class="avatar">
-      <img src="kian.jpeg" alt="Foto profil Kiandra Rafa Adiyar" />
-    </div>
-    <h1>Kiandra Rafa Adiyar</h1>
-    <p class="subtitle">Pelajar SMA GUNUNG MADU</p>
-  </header>
-
-  <!-- Tombol Google Drive -->
-  <div style="text-align: center; margin-bottom: 40px;">
-    <a class="btn drive-anim" href="https://drive.google.com/drive/folders/1Zpw-jkam4kGb8K-Yc8TLIT3HMJ_MpLIq
-" target="_blank">
-      📁 Lihat Google Drive
-    </a>
+<header>
+  <div class="avatar">
+    <img src="kian.jpeg" alt="Kiandra Rafa Adiyar">
   </div>
+  <h1>Kiandra Rafa Adiyar</h1>
+  <p class="subtitle">Pelajar SMA GUNUNG MADU</p>
 
-  <!-- Konten Utama -->
-  <main>
-    <!-- Tentang -->
-    <section id="tentang">
-      <h2>📍 Tentang Saya</h2>
-      <p>
-        Saya Kiandra Rafa Adiyar, pelajar di SMA Gunung Madu yang memiliki semangat belajar tinggi dan rasa ingin tahu yang besar terhadap hal-hal baru. Saya dikenal sebagai pribadi yang disiplin, kreatif, dan tekun, baik dalam kegiatan akademik maupun non-akademik.
-      </p>
-    </section>
+  <a class="btn drive-anim" href="https://drive.google.com/drive/folders/1Zpw-jkam4kGb8K-Yc8TLIT3HMJ_MpLIq" target="_blank">
+    📁 Lihat Google Drive
+  </a>
+</header>
 
-    <!-- Biodata -->
-    <section id="biodata">
-      <h2>📄 Biodata</h2>
-      <ul>
-        <li><strong>Umur:</strong> 17 tahun</li>
-        <li><strong>Tempat, Tanggal Lahir:</strong> Lampung Tengah, 15 Agustus 2008</li>
-        <li><strong>Gender:</strong> Laki-laki</li>
-        <li><strong>Hobi:</strong> futsal,badminton,basket,Mendengar musik</li>
-        <li><strong>Alamat:</strong> Jl.Rahadian Yamin,perum 2,Lampung,Lampung Tengah</li>
-        <li><strong>Mata pelajaran pilihan:</strong> biologi,kimia,english</li>
-      </ul>
-    </section>
+<main>
 
-    <!-- Prestasi -->
-    <section id="prestasi">
-      <h2>🏆 Prestasi Dan Pencapaian</h2>
-      <div class="card-list">
-        <div class="card">
-          <h3>Juara 2 Futsal Pelajar Lampung</h3>
-          <p>Juara 2 Futsal Pelajar Lampung– Diselenggarakan oleh Akademi futsal pelajar lampung</p>
-        </div>
-        <div class="card">
-          <h3>Hafal 3 Juz Al quran</h3>
-          <p>Hafal 3 Juz Al quran saat menempuh pendidikan di smp Muhammadiyah Boarding School</p>
-        </div>
-        <div class="card">
-          <h3>peserta seleksi atletik lampung tengah</h3>
-          <p>peserta seleksi atletik lampung tengah pada tahun 2023</p>
-        </div>
-      </div>
-    </section>
+<section id="tentang">
+  <h2>📍 Tentang Saya</h2>
+  <p>
+    Saya Kiandra Rafa Adiyar, pelajar SMA Gunung Madu yang disiplin, kreatif, dan memiliki
+    semangat belajar tinggi baik di bidang akademik maupun non-akademik.
+  </p>
+</section>
 
-    <!-- Kontak -->
-    <section id="kontak">
-      <h2>📞 Kontak</h2>
-      <div class="contact-info">
-        <p>Telepon: 0821-7685-0596</p>
-        <p>Instagram: <a href="https://www.instagram.com/kiandrarafaa?igsh=a3A4bjVscGxvaTRi" target="_blank">@kiandrarafaa</a></p>
-      </div>
-      <br/>
-      <a class="btn" href="https://www.instagram.com/kiandrarafaa?igsh=a3A4bjVscGxvaTRi" target="_blank">Hubungi via Instagram</a>
-    </section>
-  </main>
+<section id="biodata">
+  <h2>📄 Biodata</h2>
+  <div class="table-wrapper">
+    <table>
+      <tr><th>Nama</th><td>Kiandra Rafa Adiyar</td></tr>
+      <tr><th>Umur</th><td>17 Tahun</td></tr>
+      <tr><th>TTL</th><td>Lampung Tengah, 15 Agustus 2008</td></tr>
+      <tr><th>Jenis Kelamin</th><td>Laki-laki</td></tr>
+      <tr><th>Hobi</th><td>Futsal, Badminton, Basket, Musik</td></tr>
+      <tr><th>Alamat</th><td>Jl. Rahadian Yamin, Lampung Tengah</td></tr>
+      <tr><th>Mapel Favorit</th><td>Biologi, Kimia, English</td></tr>
+    </table>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Kiandra Rafa Adiyar. All rights reserved.
-  </footer>
+<section id="prestasi">
+  <h2>🏆 Prestasi dan Pencapaian</h2>
+  <div class="table-wrapper">
+    <table class="prestasi-table">
+      <tr>
+        <th>Prestasi</th>
+        <th>Keterangan</th>
+        <th>Tahun</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Juara 2 Futsal Pelajar Lampung</td>
+        <td>Akademi Futsal Pelajar Lampung</td>
+        <td>2023</td>
+        <td><span class="badge gold">Juara</span></td>
+      </tr>
+      <tr>
+        <td>Hafal 3 Juz Al-Qur'an</td>
+        <td>SMP MBS</td>
+        <td>2022</td>
+        <td><span class="badge green">Akademik</span></td>
+      </tr>
+      <tr>
+        <td>Seleksi Atletik Lampung Tengah</td>
+        <td>Peserta Seleksi</td>
+        <td>2023</td>
+        <td><span class="badge blue">Peserta</span></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section id="kontak">
+  <h2>📞 Kontak</h2>
+  <p>📱 Telepon: 0821-7685-0596</p>
+  <p>📸 Instagram: <a href="https://www.instagram.com/kiandrarafaa" target="_blank">@kiandrarafaa</a></p>
+  <a class="btn" href="https://www.instagram.com/kiandrarafaa" target="_blank">Hubungi via Instagram</a>
+</section>
+
+</main>
+
+<footer>
+  © 2025 Kiandra Rafa Adiyar. All rights reserved.
+</footer>
 
 </body>
 </html>
